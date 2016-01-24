@@ -1,0 +1,132 @@
+models: 201Em.t3d
+animations: 6 0 0 4 2 2 -1
+animwheelprefix: wheel0
+animpantrd1prefix: ramiedolne1_pant0
+animpantrd2prefix: ramiedolne2_pant0
+animpantrg1prefix: ramiegorne1_pant0
+animpantrg2prefix: ramiegorne2_pant0
+animpantslprefix: slizg_pant0
+pantfactors: -5.604 5.635 4.467 0.215
+endmodels
+
+sounds:
+wheel_clatter: 19 -7.0 2k-wh1-2k.wav -5.25 2k-w-1.wav -3.5 2k-wh2-2k.wav 3.5 2k-wh1-2k.wav 5.25 2k-w-2.wav 7.0 2k-wh2-2k.wav end
+curve: curve.wav 91
+engine: motor-eu07.wav 180.0  0.305 0.6  0.055 0.1 
+ventilator: rvent-et42.wav 85.5  1.175 0.245  0.95 0.65 
+brake: brake-scr.wav 100.0 5000.0 -1.0
+derail: derail.wav 200
+horn1: 5472_horn_nisk_2xxx_1.wav 5472_horn_nisk_2xxx_2.wav 5472_horn_nisk_2xxx_3.wav 400
+horn2: et22horn1-start.wav et22horn1.wav et22horn1-stop.wav 300
+compressor: spr_2-2k-1.wav, spr_2-2k-2.wav, spr_2-2k-3.wav 45
+small-compressor: s-compressor-start.wav,s-compressor.wav,s-compressor-stop.wav 100
+converter: cnv_et2000_1.wav cnv_et2000_2.wav cnv_et2000_3.wav 22
+PantographUp: pantup1.wav
+pantographdown: pantdown.wav
+endsounds
+
+internaldata:
+// dzwieki:
+ctrl: nast_2k.wav
+buzzer: bzyczek2k.wav
+tachoclock: silence1.wav
+switch: switch.wav
+relay: relay_2k.wav
+pneumaticrelay: pneumaticrelay.wav
+couplerattach: couplerattach.wav
+couplerdetach: couplerdetach.wav
+fadesound: proc_20xx.wav
+
+brakesound: brake.wav 1.0 0.4 0.2 0.9   
+slipperysound: brake-slipp.wav 2.0 0.2  
+airsound: hiss2k.wav 1000.0 -0.1 
+runningnoise: runningnoise.wav  1.365 0.52 1.9 0.05   
+
+
+mechspring: 130.5    0.52 0.45 0.225 0.015    0.835 0.16 0.0085
+
+cab1definition:   
+-1.65 1.5 7.47 1.65 1.5 8.2 
+driver1pos:
+1.0 3.17 7.52
+driver1sitpos:       
+-0.63 3.061 7.721
+cab1model: kabinaa-py.t3d
+
+cab2definition:
+-1.65 1.5 -8.2 1.65 1.5 -7.47
+driver2pos:
+-1.0 3.15 -7.52
+driver2sitpos:
+0.63 3.061 -7.721
+cab2model: kabinab-py.t3d
+
+// parametry dla regulatorow 
+mainctrl: nastawnikpodst rot 0.0285 0.21 0.17
+mainctrlact: mnctr rot 0.01565 0.1907 0.0
+dirkey: kluczpodst rot -0.0225 0.01 0.15                 
+brakectrl: kran_zasadniczy rot 0.035 0.165 0.2          
+localbrake: kran_pomocniczy rot 0.025 0.17 0.1
+
+//przelaczniki
+//brakeprofile_sw: none!
+//maxcurrent_sw: none!
+universal2: sw-lights mov 0.0 -500.5 0.0
+
+//przyciski monostabilne:
+//main_off_bt: none!            
+main_sw: ws rot 0.1 0 1.2                 
+security_reset_bt: Przycisk-czuwak mov -0.005 0 0.2                
+releaser_bt: Przycisk-odluzniacz mov -0.005 0 0.25                 
+antislip_bt: Przycisk-antyposlizg mov -0.005 0 0.2  
+//fuse_bt: none!
+//compressor_sw: none! 
+//converter_sw: none!
+pantfront_sw: pant1 rot 0.1 0 1.2
+pantrear_sw: pant2 rot 0.1 0 1.2
+trainheating_sw: zas_poc rot 0.1 0 1.2
+horn_bt: rpdzw rot -0.025 0 0.1 
+universal3: ekran rot -0.1 0 0.1 
+
+//(measurement devices):
+tachometern: speedknob rot 0.004025 0.0589 0.19
+//tachometerb: speedknob_b rot 0.0044 0.05 0.2  
+HVcurrent: UTKnob mov 0.0000668 -0.006 0.319        
+Hvoltage: I1Knob mov 0.00001075 0 8.25 
+//Lvoltage: none!
+brakepress: CylHamKnob rot 0.79 0 0
+pipepress: PrzGlKnob rot 0.74 0 0
+compressor: ZbGlKnob rot 0.45 0 0
+//clock: analog  //na razie tylko taki moze byc, /mka/: ale kit ze komp dziala :D
+
+//(indicators):
+
+//i-slippery: poslizg
+//i-contactors: styczn
+//i-conv_ovld: przetw //!
+//i-diff_relay: przek_rozn
+//i-diff_relay2: roznicowy_pom
+//i-motor_ovld: nadm_siln
+//i-mainbreaker: szybki
+//i-vent_ovld: nadm_went
+//i-comp_ovld: nadm_spr
+//i-resistors: opory
+//i-vent_trim: zaluzje
+//i-trainheating: ogrzewanie
+i-security_aware: czuwak
+i-security_cabsignal: shp
+i-heating: ogrzewanie
+i-voltbrake: zaluzje
+i-compressor: compr
+i-braking: brakes
+i-universal3: ekr
+//i-forward: lcd_jazda_przod
+//i-backward: lcd_jazda_tyl
+
+cab0definition:
+-0.1 1.5 -5.9 0.2 1.5 5.9
+driver0pos:
+0.0 3.0 0.1
+cab0model: korytarz.t3d
+
+pyscreen: lcd_jazda et22_2000_renderer
